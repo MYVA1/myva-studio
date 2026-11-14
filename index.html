@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyVA Studio | Websites, Online Stores and Business Systems</title>
+<meta name="description" content="MyVA Studio designs and builds websites, online stores and business systems for small businesses anywhere in the world. See the work and book a free call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<!-- Design follows the unslop skill by Damir Sokolovsky (@heydamir), CC BY 4.0 -->
+<style>
+:root{
+  --bg:#f7f4ee; --card:#fdfbf7; --raised:#efe9df;
+  --text:#1f1b16; --text-2:#5e554a; --text-3:#7b7266;
+  --hair:rgba(31,27,22,.1);
+  --dark:#1f1b16; --on-dark:#efe9de; --on-dark-2:#aaa398; --hair-dark:rgba(239,233,222,.12);
+  --accent:#0649a8; --accent-hover:#053d8a;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Instrument Serif',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/24px var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol,figure{margin:0;padding:0}
+ul,ol{list-style:none}
+a{color:inherit}
+h1,h2{font-family:var(--serif);font-weight:400}
+h1{font-size:clamp(40px,5.6vw,72px);line-height:1.04;letter-spacing:-.02em}
+h2{font-size:clamp(32px,3.4vw,44px);line-height:1.1;letter-spacing:-.01em}
+h3{font:500 18px/24px var(--sans)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.head{text-align:center;margin:0 auto 48px;max-width:40rem}
+.head p{color:var(--text-2);margin-top:12px;font-size:18px;line-height:28px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;border-radius:10px;font:500 16px/24px var(--sans);text-decoration:none;border:1px solid transparent;transition:background-color .15s var(--ease),transform .15s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-secondary{background:var(--card);border-color:var(--hair);color:var(--text)}
+.btn-secondary:hover{background:var(--raised)}
+.btn-light{background:var(--on-dark);color:var(--dark)}
+.btn-light:hover{background:#fff}
+.btn-sm{height:36px;padding:0 16px;font-size:15px;border-radius:8px}
+
+header{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo{display:block;position:relative;width:80px;height:44px;overflow:hidden;flex:none}
+.logo img{position:absolute;left:-7px;top:-25px;width:94px;height:94px;max-width:none;mix-blend-mode:multiply}
+.brand .name{font:400 22px/1 var(--serif);color:var(--text-2)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a:not(.btn){text-decoration:none;font-size:15px;color:var(--text-2);transition:color .15s var(--ease)}
+.nav-links a:not(.btn):hover{color:var(--text)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;height:36px;padding:0 12px;display:flex;align-items:center;border:1px solid var(--hair);border-radius:8px;font-size:15px}
+.menu summary::-webkit-details-marker{display:none}
+.menu ul{position:absolute;right:0;top:44px;width:200px;background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.menu li a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;font-size:15px}
+.menu li a:hover{background:var(--raised)}
+@media (max-width:760px){.nav-links{display:none}.menu{display:block}}
+
+.hero{padding:80px 0 72px;text-align:center}
+.hero h1{max-width:14em;margin:0 auto}
+.hero .sub{font-size:20px;line-height:30px;color:var(--text-2);max-width:38rem;margin:24px auto 0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
+.hero .line{font-size:14px;line-height:20px;color:var(--text-3);margin-top:16px}
+
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.shots .shot{aspect-ratio:4/3}
+.shot{display:block;overflow:hidden;border:1px solid var(--hair);border-radius:16px;background:var(--raised)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+@media (max-width:760px){.shots{grid-template-columns:1fr 1fr}.shots .shot:last-child{display:none}}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tile{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:28px 24px}
+.tile .n{font:400 24px/24px var(--serif);color:var(--accent)}
+.tile h3{margin-top:16px}
+.tile p{color:var(--text-2);margin-top:8px;font-size:15px;line-height:22px}
+.tile ul{margin-top:16px;border-top:1px solid var(--hair);padding-top:8px}
+.tile li{position:relative;padding:6px 0 6px 20px;font-size:15px;line-height:22px}
+.tile li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.proj{background:var(--card);border:1px solid var(--hair);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.proj .shot{border:0;border-bottom:1px solid var(--hair);border-radius:0;aspect-ratio:16/10}
+.proj .body{padding:20px 24px 24px}
+.proj .kind{font-size:14px;line-height:20px;color:var(--text-3)}
+.proj .kind b{font-weight:500;color:var(--accent)}
+.proj h3{font:400 26px/30px var(--serif);margin-top:6px}
+.proj p{color:var(--text-2);font-size:15px;line-height:22px;margin-top:8px}
+.proj a.visit{display:inline-block;margin-top:12px;font-size:15px;font-weight:500;color:var(--accent);text-underline-offset:3px}
+@media (max-width:900px){.work{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.work{grid-template-columns:1fr}}
+
+.how{background:var(--dark);color:var(--on-dark)}
+.how .head p{color:var(--on-dark-2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.steps li{border:1px solid var(--hair-dark);border-radius:16px;padding:24px}
+.steps .n{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--on-dark);color:var(--dark);font:400 24px/1 var(--serif)}
+.steps h3{margin-top:20px}
+.steps p{color:var(--on-dark-2);margin-top:8px;font-size:15px;line-height:22px}
+@media (max-width:1000px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+.get{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+.get p{color:var(--text-2);margin-top:16px;max-width:26rem}
+.card{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:24px}
+.card li{display:grid;grid-template-columns:16px 1fr;gap:12px;padding:8px 0;font-size:16px;line-height:24px;color:var(--text-2);border-top:1px solid var(--hair)}
+.card li:first-child{border-top:0}
+.card li::before{content:"";width:5px;height:10px;margin:5px 0 0 5px;border:solid var(--accent);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+@media (max-width:900px){.get{grid-template-columns:1fr;gap:32px}}
+
+.cta{padding-top:0}
+.panel{background:var(--dark);color:var(--on-dark);border-radius:20px;padding:64px 32px;text-align:center}
+.panel p{color:var(--on-dark-2);margin:16px auto 0;max-width:32rem;font-size:18px;line-height:28px}
+.panel .meta{font-size:15px;line-height:22px;margin-top:24px}
+.panel .meta a{color:var(--on-dark)}
+footer{border-top:1px solid var(--hair);padding:24px 0;font-size:14px;line-height:20px;color:var(--text-3)}
+.foot{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.foot a{color:var(--text-2)}
+@media (max-width:760px){section{padding:64px 0}.hero{padding:56px 0 48px}.head{margin-bottom:32px}.panel{padding:48px 24px}}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="MyVA Studio home"><span class="logo"><img src="https://myva.in/wp-content/uploads/2023/11/cropped-New-Marketing-Kit-4.png" alt="MyVA" width="94" height="94"></span><span class="name">Studio</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Book a call</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#contact">Book a call</a></li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <h1>Websites and stores that work as hard as you do</h1>
+    <p class="sub">MyVA Studio designs and builds websites, online stores and business systems for small businesses, remotely and for clients anywhere</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#contact">Book a free call</a>
+      <a class="btn btn-secondary" href="#work">See the work</a>
+    </div>
+    <p class="line">Every project below was delivered for a real client</p>
+    <div class="shots">
+      <a class="shot" href="#work"><img src="https://myva.in/wp-content/uploads/2026/08/flex-nutrition-homepage.jpg" alt="Flex Nutrition online store homepage built by MyVA" width="800" height="600"></a>
+      <a class="shot" href="#work"><img src="https://myva.in/wp-content/uploads/2026/10/Fiji-Wildflower-Micro-Bakery-homepage-built-by-MyVA.png" alt="Fiji Wildflower Micro Bakery website built by MyVA" width="800" height="600" loading="lazy"></a>
+      <a class="shot" href="#work"><img src="https://myva.in/wp-content/uploads/2026/08/solid-ground-homepage.jpg" alt="Solid Ground Movement website designed by MyVA" width="800" height="600" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:32px">
+  <div class="wrap">
+    <div class="head">
+      <h2>Selected work</h2>
+      <p>Websites, stores and systems we have built and run</p>
+    </div>
+    <div class="work">
+      <article class="proj"><a class="shot" href="https://flexnutritionthecage.com/" rel="noopener"><img src="https://myva.in/wp-content/uploads/2026/08/flex-nutrition-collection.jpg" alt="Flex Nutrition supplement collection page" width="800" height="500" loading="lazy"></a><div class="body"><p class="kind"><b>Online store</b> ¬∑ Flex Nutrition</p><h3>A supplement catalogue built to sell in 28 markets</h3><p>A full Shopify store with a four-level catalogue, brand collections and multi-currency checkout from launch.</p><a class="visit" href="https://flexnutritionthecage.com/" rel="noopener">Visit the store</a></div></article>
+      <article class="proj"><a class="shot" href="https://fijiwildflowersbakery.com/" rel="noopener"><img src="https://myva.in/wp-content/uploads/2026/10/fiji-wildflower-order.png" alt="Fiji Wildflower Micro Bakery order form" width="800" height="500" loading="lazy"></a><div class="body"><p class="kind"><b>Website and order form</b> ¬∑ Fiji Wildflower Micro Bakery</p><h3>A bakery's menu, reviews and orders on one page</h3><p>An image-led single page with an order form that shows a running total, feeding the owner's Google Sheet.</p><a class="visit" href="https://fijiwildflowersbakery.com/" rel="noopener">Visit the site</a></div></article>
+      <article class="proj"><a class="shot" href="https://myva.in/our-work/" rel="noopener"><img src="https://myva.in/wp-content/uploads/2026/08/itsmeglady-homepage.jpg" alt="It's Me Glady Shopify store homepage" width="800" height="500" loading="lazy"></a><div class="body"><p class="kind"><b>Online store</b> ¬∑ It's Me Glady</p><h3>A store built from nothing but a brand</h3><p>A Shopify build from scratch, with collections that organize themselves as the catalogue grows.</p></div></article>
+      <article class="proj"><a class="shot" href="https://myva.in/our-work/" rel="noopener"><img src="https://myva.in/wp-content/uploads/2026/08/solid-ground-service.jpg" alt="Solid Ground Movement service page" width="800" height="500" loading="lazy"></a><div class="body"><p class="kind"><b>Website and SEO</b> ¬∑ Solid Ground Movement</p><h3>A full studio site, built to be found</h3><p>A multi-page site with booking, on-page SEO and a Google Business Profile for local search.</p></div></article>
+      <article class="proj"><a class="shot" href="https://myva.in/our-work/" rel="noopener"><img src="https://myva.in/wp-content/uploads/2026/08/ricardo-dashboard.jpg" alt="Real estate command center dashboard in Google Sheets" width="800" height="500" loading="lazy"></a><div class="body"><p class="kind"><b>Business system</b> ¬∑ Real estate brokerage</p><h3>A command center for a one-person brokerage</h3><p>A Google Sheets system for commissions, expenses and profit, synced to the CRM with Apps Script.</p></div></article>
+      <article class="proj"><a class="shot" href="https://bkmuu.in/" rel="noopener"><img src="https://myva.in/wp-content/uploads/2026/09/bkmuu-homepage.jpg" alt="BKMUU union website homepage" width="800" height="500" loading="lazy"></a><div class="body"><p class="kind"><b>Website and IT support</b> ¬∑ BKMUU</p><h3>A national organization, online and reachable</h3><p>A website plus the domain, hosting and organizational email behind it, with ongoing technical support.</p><a class="visit" href="https://bkmuu.in/" rel="noopener">Visit the site</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="services" style="background:var(--card);color:var(--text);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)">
+  <div class="wrap">
+    <div class="head">
+      <h2>What we build</h2>
+      <p>Three things, done properly</p>
+    </div>
+    <ul class="grid">
+      <li class="tile"><span class="n" aria-hidden="true">1</span><h3>Websites</h3><p>Clear, fast, mobile-ready sites in your brand, built on WordPress, Wix, Squarespace or your preferred platform.</p><ul><li>Custom design and build</li><li>SEO set up on every page</li><li>Booking and contact forms</li></ul></li>
+      <li class="tile"><span class="n" aria-hidden="true">2</span><h3>Online stores</h3><p>Shopify stores built to turn browsers into buyers, from catalogue structure to checkout.</p><ul><li>Product and collection setup</li><li>Payments, shipping and currencies</li><li>Subscriptions and bundles</li></ul></li>
+      <li class="tile"><span class="n" aria-hidden="true">3</span><h3>Business systems</h3><p>Spreadsheets, dashboards and automations that replace scattered tools and manual re-entry.</p><ul><li>Google Sheets dashboards</li><li>CRM sync and automation</li><li>Intake forms and workflows</li></ul></li>
+    </ul>
+  </div>
+</section>
+
+<section class="how" id="how" style="background:var(--dark);color:var(--on-dark)">
+  <div class="wrap">
+    <div class="head">
+      <h2>From blank page to live</h2>
+      <p>You show up for approvals and feedback. We handle the rest.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n" aria-hidden="true">1</span><h3>Discovery call</h3><p>We learn about your business, your goals and what you want the site to do for you.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Design mockup</h3><p>You approve a visual design before any code is written.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Build and review</h3><p>We build the full site and share a preview link to review on any device.</p></li>
+      <li><span class="n" aria-hidden="true">4</span><h3>Launch</h3><p>We go live, test everything and hand over the keys, or keep managing it for you.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap get">
+    <div><h2>What you get at the end</h2><p>No tech jargon and no confusion. Exactly what we build for you.</p></div>
+    <article class="card"><ul>
+      <li>A fully working site live on your domain</li>
+      <li>A layout that works on every screen size</li>
+      <li>A contact form connected to your email</li>
+      <li>Google Analytics set up and tracking</li>
+      <li>Basic SEO configured on every page</li>
+      <li>30 days of support after launch</li>
+      <li>Full ownership: it is yours completely</li>
+    </ul></article>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="panel">
+      <h2>Tell us what you want to build</h2>
+      <p>Book a free 15-minute call. No obligation and no sales pressure.</p>
+      <div class="actions"><a class="btn btn-light" href="https://myva.in/contact-us/">Book a free call</a></div>
+      <p class="meta">Or email <a href="mailto:info@myva.in">info@myva.in</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>¬© 2026 MyVA Studio, a MyVA Virtual Assistant company</span>
+    <span><a href="https://myva.in/">MyVA virtual assistants</a> ¬∑ <a href="https://myva.in/privacy-policy/">Privacy Policy</a> ¬∑ <a href="https://myva.in/terms-of-service/">Terms of Service</a></span>
+  </div>
+</footer>
+</body>
+</html>
